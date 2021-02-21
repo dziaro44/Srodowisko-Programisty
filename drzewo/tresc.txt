@@ -1,0 +1,54 @@
+Celem zadania jest napisanie programu który dostaje wejście w poniższym formacie:
+
+liczba zestawów
+dla każdego zestawu:
+  folder/file
+  Line of text.
+  
+i dla każdego takiego zestawu ma za zadanie:
+- Jeżeli w ścieżce z której plik był odpalany nie istnieje folder "folder", to go tworzymy
+- Jeżeli w folderze folder nie istnieje plik "file", to go tworzymy
+- Do pliku "file" dopisujemy na koniec linię "Line of text."
+- W folderze z którego był odpalany plik tworzymy symlinka do pliku "folder/file" i nazywamy go file.symlink
+
+Możesz przyjąć, że w różnych folderach będą tworzone pliki o różnych nazwach, więc nie będzie  problemu z tym do
+którego pliku powinien się odwoływać symlink.
+
+przykład:
+w jakimś katalogu głównym mamy folder "tree_test" i folder "prog_dir", pierwszy z nich jest pusty,
+w terminalu z katalogu głównego wykonujemy:
+
+$ cd tree_test
+$ ./../prog_dir/prog
+4
+folderA/1.txt
+Pierwsza linia tekstu.
+folderB/jeden.txt
+123
+folderA/1.txt
+Druga linia tekstu.
+folderA/2.txt
+Jakiś plik.
+
+Co powinno skutkować utworzeniem takiego drzewa plików:
+├── 1.txt.symlink -> /home/test_tree/folderA/1.txt
+├── 2.txt.symlink -> /home/test_tree/folderA/2.txt
+├── folderA
+│   ├── 1.txt
+│   └── 2.txt
+├── folderB
+│   └── jeden.txt
+└── jeden.txt.symlink -> /home/test_tree/folderB/jeden.txt
+
+2 directories, 6 files
+
+gdzie plik folderA/1.txt zawiera:
+Pierwsza linia tekstu.
+Druga linia tekstu.
+
+plik folderA/2.txt:
+Jakiś plik.
+
+plik folderB/jeden.txt:
+123
+
