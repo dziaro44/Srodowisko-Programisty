@@ -1,0 +1,39 @@
+Zadanie: GCD/LCM z parametrami.
+
+Należy napisać program, który oblicza największy wspólny dzielnik lub najmniejszą wspólną wielokrotność dwóch liczb całkowitych. Argumenty będą przekazane do programu za pomocą linii poleceń (trzeba użyć argc, argv). Program powinien zapewniać obsługę poniższych parametrów:
+
+--help lub -h, jeżeli pojawi się w dowolnym miejscu wśród parametrów, to niezależnie od tego jakie są wszystkie pozostałe argumenty należy wypisać "Usage: [OPTION]... [Integer1] [Integer2]\n"
+
+--gcd lub -d, program powinien obliczyć GCD dwóch liczb, które powinny być dwoma ostatnimi argumentami, dodatkowo jest to opcja domyślna, czyli jeżeli żadna opcja jak --help/--gcd/--lcm nie zostanie podana, a podane zostaną dwie liczby to program powinien policzyć GCD
+
+--lcm lub -m, program powinien obliczyć GCD dwóch liczb, które powinny być dwoma ostatnimi argumentami
+
+--quiet lub -q, jeżeli program wykonuje się poprawie, to ta opcja nie wpływa na działanie, jeżeli podczas wykonywania wystąpi jeden z błędów opisanych poniżej to zamiast wypisywać "ERROR\n", program nic nie wypisuje i kończy działanie
+
+Błędy które należy rozważyć: 
+ - Za mała liczba argumentów
+ - Podanie dwóch wykluczających się opcji --gcd i --lcm 
+W tych dwóch wypadkach należy wypisać "ERROR\n" (chyba, że --quiet) i zakończyć działanie programu
+
+Możesz przyjąć, że jeżeli program posiada co najmniej dwa argumenty i nie ma wśród nich --help ani -h, to dwa ostatnie argumenty to poprawnie podane liczby całkowite, dodatnie, mieszczące się w zakresie inta.
+
+Przykładowe działanie: 
+./prog 9 21
+3
+
+./prog --lcm 44 121
+11
+
+./prog 17 -h
+Usage: [OPTION]... [Integer1] [Integer2]
+
+./prog 
+ERROR
+
+./prog --lcm --gcd 9 21
+ERROR
+
+./prog --lcm --gcd -q 9 21
+
+./prog -q 4 2
+2
