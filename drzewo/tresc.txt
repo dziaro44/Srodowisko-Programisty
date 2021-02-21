@@ -1,3 +1,4 @@
+Zadanie jest głównie na drzewo katalogów, ale korzysta też ze zmiennej środowiskowej.
 Celem zadania jest napisanie programu który dostaje wejście w poniższym formacie:
 
 liczba zestawów
@@ -5,9 +6,9 @@ dla każdego zestawu:
   folder/file
   Line of text.
   
-i dla każdego takiego zestawu ma za zadanie:
+i dla każdego takiego zestawu powinien wykonać:
 - Jeżeli w ścieżce z której plik był odpalany nie istnieje folder "folder", to go tworzymy
-- Jeżeli w folderze folder nie istnieje plik "file", to go tworzymy
+- Jeżeli w folderze "folder" nie istnieje plik "file", to go tworzymy
 - Do pliku "file" dopisujemy na koniec linię "Line of text."
 - W folderze z którego był odpalany plik tworzymy symlinka do pliku "folder/file" i nazywamy go file.symlink
 
@@ -15,7 +16,7 @@ Możesz przyjąć, że w różnych folderach będą tworzone pliki o różnych n
 którego pliku powinien się odwoływać symlink.
 
 przykład:
-w jakimś katalogu głównym mamy folder "tree_test" i folder "prog_dir", pierwszy z nich jest pusty,
+w katalogu głównym mamy folder "tree_test" i folder "prog_dir", pierwszy z nich jest pusty, w drugim jest plik wykonywalny progamu
 w terminalu z katalogu głównego wykonujemy:
 
 $ cd tree_test
@@ -51,4 +52,13 @@ Jakiś plik.
 
 plik folderB/jeden.txt:
 123
+
+Wymagania do kodu (jak również podpowiedzi, więc można zostawić, można usunąć):
+getenv() z stdlib.h, do pozyskania aktualnego katalogu ze zmiennej środowiskowej "PWD"
+stat() z sys/stat.h, do ustalenia czy folder o podanej nazwie istnieje (wraz z użyciem odpowiedniej flagi do sprawdzenia czy faktycznie jest folderem)
+mkdir() z sys/stat.h, do tworzenia folderów
+open() z fcntl.h, do tworzenia, otwierania plików
+write() z unistd.h, do dopisywania do plików
+symlink() z unistd.h, do utworzenia symlinków
+
 
