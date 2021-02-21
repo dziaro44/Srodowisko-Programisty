@@ -1,6 +1,7 @@
 Zadanie: GCD/LCM z parametrami.
 
-Należy napisać program, który oblicza największy wspólny dzielnik lub najmniejszą wspólną wielokrotność dwóch liczb całkowitych. Argumenty będą przekazane do programu za pomocą linii poleceń (trzeba użyć argc, argv). Program powinien zapewniać obsługę poniższych parametrów:
+Należy napisać program, który oblicza największy wspólny dzielnik lub najmniejszą wspólną wielokrotność dwóch liczb całkowitych. 
+Argumenty będą przekazane do programu za pomocą linii poleceń (trzeba użyć argc, argv). Program powinien zapewniać obsługę poniższych parametrów:
 
 --help lub -h, jeżeli pojawi się w dowolnym miejscu wśród parametrów, to niezależnie od tego jakie są wszystkie pozostałe argumenty należy wypisać "Usage: [OPTION]... [Integer1] [Integer2]\n"
 
