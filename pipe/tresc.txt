@@ -1,7 +1,6 @@
 Należy napisać program który utowrzy dwa procesy potomne i pipe'a między nimi i w obu wywoła programy
 podane jako argumenty z linii poleceń (za pomocą argc, argv)
-Drugi z procesów potomnych dziedziczy standardowe wyjście
-po głównym procesie, więc output programu, który on wykona powinien zostać wypisany, najlepiej to widać na przykładach:
+Drugi z procesów potomnych dziedziczy standardowe wyjście po głównym procesie, najlepiej to widać na przykładach:
 
 ./prog 1 ps 1 sort
     PID TTY          TIME CMD
@@ -24,6 +23,6 @@ drwxrwxr-x 6 dziaro44 dziaro44  4096 lut 21 20:21 ..
 np. w "./prog 2 ls -la 1 wc", 2 oznacza liczbę słów w pierwszym progamie do wywołania, a 1 w drugim i 
 faktycznie najpierw mamy "ls -la" - dwa słowa i "wc" - jedno 
 
-Program tak właściwie całkiem prosty do napisania, chociaż nie raczej nietrywialny do napisania na pierwszym roku, 
+Program tak właściwie całkiem prosty do napisania, ale może i tak zbyt trudny(?), 
 ale pokazuje kolejne wykorzystanie argc argv, wywoływanie programów przy użyciu exec, 
 przekierowanie za pomocą pipe, podstawowe operacje na deskryptorach jak dup czy close
