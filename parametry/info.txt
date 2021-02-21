@@ -1,4 +1,14 @@
-Zadanie ma na celu pokazać jak można przekazywać argumenty do programu w C za pomocą argc argv. Oprócz parametrów dotyczących samego zadania jak --lcm i --gcd mamy też typowe --help i --quiet.
-Rozwiązanie powinno wykorzystywać jakąś wbudowaną funkcje do zamiany stringa w inta np. atoi lub strtol z stdlib.h oraz funkcji, która pomoże przy czytaniu parametrów jak strcmp z string.h
-Można by tak właściwie wymagać wykorzystania funkcji getopt/getopt_long z unistd.h, ale nie wiem czy w tym przypadku to nie jest niepotrzebne komplikowanie sprawy i utrudnianie zadania, ale jeżeli trzeba mogę przerobić moje rozwiązanie na takie które z tego korzysta.
-W zadaniu wymaga się również rozważenia jakiegoś błędnego inputu co nie jest typowe w zadaniach algorytmicznych, ale już np. na systemach operacyjnych na drugim roku się sporo temu poświęca, żeby rozważyć różne możliwe błędy, także tutaj może też warto, ale też nie ma sensu, żeby zadanie było sprawdzaniem miliona przypadków, więc ta ilość i typ błądów też jest mocno ograniczona, np. nie będzie testu ./prog --gcd 101 404sss 
+Zadanie ma na celu pokazać jak można przekazywać argumenty do programu w C za pomocą argc argv. 
+Oprócz parametrów dotyczących samego zadania jak --lcm i --gcd mamy też typowe --help i --quiet.
+
+Rozwiązanie powinno wykorzystywać jakąś wbudowaną funkcje do zamiany stringa w inta np. atoi lub strtol z stdlib.h 
+oraz funkcji, która pomoże przy czytaniu parametrów jak strcmp z string.h
+
+Można by tak właściwie wymagać wykorzystania funkcji getopt/getopt_long z unistd.h, 
+ale nie wiem czy w tym przypadku to nie jest niepotrzebne komplikowanie sprawy i utrudnianie zadania, 
+ale jeżeli trzeba mogę przerobić moje rozwiązanie na takie które z tego korzysta.
+
+W zadaniu wymaga się również rozważenia jakiegoś błędnego inputu co nie jest typowe w zadaniach algorytmicznych, 
+ale już np. na systemach operacyjnych na drugim roku się sporo temu poświęca, żeby rozważyć różne możliwe błędy, 
+także tutaj może też warto, ale też nie ma sensu, żeby zadanie było sprawdzaniem miliona przypadków, 
+więc ta ilość i typ błądów też jest mocno ograniczona, np. nie będzie testu ./prog --gcd 101 404sss 
