@@ -1,0 +1,3 @@
+Zadanie ma na celu pokazać jak można przekazywać argumenty do programu w C za pomocą argc argv. Oprócz parametrów dotyczących samego zadania jak --lcm i --gcd mamy też typowe --help i --quiet.
+Rozwiązanie powinno wykorzystywać jakąś wbudowaną funkcje do zamiany stringa w inta np. atoi lub strtol z stdlib.h oraz funkcji, która pomoże przy czytaniu parametrów strcmp z string.h
+Można by tak właściwie wymagać jeszcze wykorzystania funkcji getopt/getopt_long
