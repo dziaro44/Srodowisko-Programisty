@@ -14,7 +14,7 @@ a podane zostaną dwie liczby to program powinien policzyć GCD
 
 --quiet lub -q, jeżeli program wykonuje się poprawie, to ta opcja nie wpływa na działanie, 
 jeżeli podczas wykonywania wystąpi jeden z błędów opisanych poniżej to zamiast wypisywać "ERROR\n", 
-program nic nie wypisuje i kończy działanie
+program wypisuje "\n" i kończy działanie
 
 Błędy które należy rozważyć: 
  - Za mała liczba argumentów
