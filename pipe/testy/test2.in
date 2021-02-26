@@ -1,0 +1,13 @@
+12
+echo "oda do radości" | grep -E '\bdo\b'
+ps | sort
+ls -la | cat
+ls -la | wc
+pwd | pwd
+pwd | wc
+pwd | cat
+echo 1 | ls -a
+ls -R | echo "123"
+ls -la | head -n 5
+echo -e "bla ble bli\nele mele dudki\nala ma kota\nkot ma alę" | sed -e 's/\(.*\) \(.*\) \(.*\)/Victor \1-\2 Von \3/'
+echo $$ | pstree

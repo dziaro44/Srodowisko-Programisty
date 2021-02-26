@@ -1,0 +1,9 @@
+8
+ls -la | cat
+ls -la | wc
+pwd | pwd
+pwd | wc
+pwd | cat
+echo 1 | ls -a
+ls -R | echo 123
+ls -la | head -n 5

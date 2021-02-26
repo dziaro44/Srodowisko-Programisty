@@ -1,0 +1,9 @@
+8
+2 ls -la 1 cat
+2 ls -la 1 wc
+1 pwd 1 pwd
+1 pwd 1 wc
+1 pwd 1 cat
+2 echo 1 2 ls -a
+2 ls -R 2 echo 123
+2 ls -la 3 head -n 5
