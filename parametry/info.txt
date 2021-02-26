@@ -4,11 +4,12 @@ Oprócz parametrów dotyczących samego zadania jak --lcm i --gcd mamy też typo
 Rozwiązanie powinno wykorzystywać jakąś wbudowaną funkcje do zamiany stringa w inta np. atoi lub strtol z stdlib.h 
 oraz funkcji, która pomoże przy czytaniu parametrów jak strcmp z string.h
 
-Można by tak właściwie wymagać wykorzystania funkcji getopt/getopt_long z unistd.h, 
-ale nie wiem czy w tym przypadku to nie jest niepotrzebne komplikowanie sprawy i utrudnianie zadania, 
-ale jeżeli trzeba mogę przerobić moje rozwiązanie na takie które z tego korzysta.
-
 W zadaniu wymaga się również rozważenia jakiegoś błędnego inputu co nie jest typowe w zadaniach algorytmicznych, 
-ale już np. na systemach operacyjnych na drugim roku się sporo temu poświęca, żeby rozważyć różne możliwe błędy, 
+ale już np. na systemach operacyjnych na drugim roku się sporo poświęca temu, żeby rozważyć różne możliwe błędy, 
 także tutaj może też warto, ale też nie ma sensu, żeby zadanie było sprawdzaniem miliona przypadków, 
-więc ta ilość i typ błądów też jest mocno ograniczona, np. nie będzie testu ./prog --gcd 101 404sss 
+więc ta ilość i typ błądów też jest mocno ograniczona, np. nie będzie testu ./prog --gcd 101 404sss
+
+Testowanie tego zadania polega wyłącznie na porównaniu inputu i outputu, także podejrzewam, że na satori są już 
+odpowiednie narzędzia do sprawdzenia tego jeżeli tylko wygeneruje input i output, ale napisałem też skrypt test.sh, 
+który przyjmuje dwa argumentyL nazwę pliku wykonywalnego testowanego programu oraz ilość testów i wypisuje 1 jeżeli program przejdzie wszystkie testy
+i 0 w przeciwnym przypadku.
