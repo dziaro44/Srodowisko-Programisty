@@ -1,0 +1,8 @@
+1 - GCD losowe
+2 - GCD losowe z dzielnikiem co najmniej 10000
+3 - LCM losowe
+4 - ERROR / (ERROR + QUIET)
+5 - (LCM/GCD) + QUIET
+6 - cokolwiek + HELP
+
+Jeżeli byłaby taka potrzeba mogę wrzucić tu też kod przy pomocy którego generowałem testy, ale to ani nic ciekawego, ani mądrego.
