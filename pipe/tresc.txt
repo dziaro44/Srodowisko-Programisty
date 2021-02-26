@@ -11,11 +11,11 @@ Drugi z procesów potomnych dziedziczy standardowe wyjście po głównym procesi
   
 ./prog 2 ls -la 1 cat
 total 36
-drwxrwxr-x 2 dziaro44 dziaro44  4096 lut 21 21:49 .
-drwxrwxr-x 6 dziaro44 dziaro44  4096 lut 21 20:21 ..
--rwxrwxr-x 1 dziaro44 dziaro44 17008 lut 21 21:49 prog
--rw-rw-r-- 1 dziaro44 dziaro44   559 lut 21 21:49 prog.c
--rw-rw-r-- 1 dziaro44 dziaro44  2632 lut 21 21:49 prog.o
+drwxrwxr-x 2 dude dude  4096 lut 21 21:49 .
+drwxrwxr-x 6 dude dude  4096 lut 21 20:21 ..
+-rwxrwxr-x 1 dude dude 17008 lut 21 21:49 prog
+-rw-rw-r-- 1 dude dude   559 lut 21 21:49 prog.c
+-rw-rw-r-- 1 dude dude  2632 lut 21 21:49 prog.o
 
 ./prog 2 ls -la 1 wc
       6      47     283
@@ -23,6 +23,10 @@ drwxrwxr-x 6 dziaro44 dziaro44  4096 lut 21 20:21 ..
 np. w "./prog 2 ls -la 1 wc", 2 oznacza liczbę słów w pierwszym progamie do wywołania, a 1 w drugim i 
 faktycznie najpierw mamy "ls -la" - dwa słowa i "wc" - jedno 
 
-Program tak właściwie całkiem prosty do napisania, ale może i tak zbyt trudny(?), 
-ale pokazuje kolejne wykorzystanie argc argv, wywoływanie programów przy użyciu exec, 
-przekierowanie za pomocą pipe, podstawowe operacje na deskryptorach jak dup czy close
+Lista funkcji, które powinny zostać wykorzystane:
+pipe() z unistd.h, utworzenie pipe'a
+fork() z unistd.h, utworzenie procesów potomnych
+close() z unistd.h, zamknięcie nieużywanych deskroptorów
+dup() lub dup2() z unistd.h, otworzenie pipe'a na standardowe wejście/wyjście w procesach potomnych
+execvp() z unistd.h, wykonanie programów
+wait() lub waitpid() z sys/wait.h, poczekanie na zakończenie procesów potomnych
