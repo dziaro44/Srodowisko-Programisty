@@ -1,0 +1,5 @@
+Treść zadania najprawdopodobniej należy przeredagować, zwłaszcza część z opisem schematu działania i sleepów.
+
+Skrypt test.sh przyjmuje dwa argumenty pid korzenia drzewa oraz oczekiwany rozmiar drzewa i wypisuje 1
+jeżeli drzewo zostało utworzone poprawnie i 0 w przeciwnym przypadku. Może być przydatny do testowania, ale raczej
+nie jest najlepiej napisany i jest mało wydajny, bo nie mam wielkiego doświadczenia w pisaniu tego typu rzeczy w bashu.
