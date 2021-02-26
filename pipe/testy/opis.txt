@@ -1,0 +1,7 @@
+test1 - wejscie dla basha
+1 - wejscie dla programu
+
+analogicznie test2 i 2, ale test2 i 2 zawierają przykłady na których z pewnych przyczyn mój skrypt 
+stwierdza błędne działanie programu, ale może przy innym skrypcie dałoby się też skorzystać z tamtych.
+Tych testów jest mało, ale w sumie mało prawdopodobne, żeby ktoś miał niepoprawnie działający program, a mu przechodziło,
+tylko chyba i tak trzebaby sprawdzić ręcznie czy na pewno ktoś korzysta z pipe() i execvp(), a nie np system()
