@@ -1,4 +1,3 @@
-Zadanie jest głównie na drzewo katalogów, ale korzysta też ze zmiennej środowiskowej.
 Celem zadania jest napisanie programu który dostaje wejście w poniższym formacie:
 
 liczba zestawów
@@ -53,7 +52,7 @@ Jakiś plik.
 plik folderB/jeden.txt:
 123
 
-Wymagania do kodu (jak również podpowiedzi, więc można zostawić, można usunąć):
+Lista funkcji, które powinny zostać wykorzystane:
 getenv() z stdlib.h, do pozyskania aktualnego katalogu ze zmiennej środowiskowej "PWD"
 stat() z sys/stat.h, do ustalenia czy folder o podanej nazwie istnieje (wraz z użyciem odpowiedniej flagi do sprawdzenia czy faktycznie jest folderem)
 mkdir() z sys/stat.h, do tworzenia folderów
