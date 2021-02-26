@@ -1,32 +1,35 @@
-Zostawiam to zadanie chociaż to raczej nie jest dobry pomysł, ale jak już wymyśliłem to opisałem, może da się to jakoś naprawić.
-Dodatkowo nie mam pojęcia czy da się to sensownie testować.
-
-Nie jestem pewny co do sensowności tego zadania, też rozwiązanie jest mocno wątpliwe, bo używanie sleep(), żeby poczekać, aż coś się wykona
-to słaby pomysł, ale nic innego nie działało mi dobrze.
-
 Celem programu jest utowrzenie drzewa procesów o zadanym rozmiarze które będzie drzewem binarnym prawie pełnym czyli:
 liście występują na ostatnim i ewentualnie przedostatnim poziomie w drzewie (tylko gdy ostatni poziom nie jest całkowicie wypełniony),
 liście na ostatnim poziomie są spójnie ułożone od strony lewej do prawej.
 
-Utworzenie takiego drzewa powinno się odbywać przez wielokrotne forkowanie, na koniec należy wypisać drzewo przez wywołanie
-system("pstree -p pid"); 
-gdzie pid to process id pierwotnego procesu w którym został wywołany program
-to wywołanie powinno się znajdować w tym głównym procesie i program powinien zakończyć działanie po wypisaniu
+Utworzenie takiego drzewa powinno się odbywać przez wielokrotne forkowanie, na koniec należy wypisać pid procesu będącego korzeniem drzewa,
+czyli pid procesu w którym został wywołany program.
+Należy przyjąć poniższy schemat działania:
+
+W głównym procesie forkujemy tyle ile potrzeba, a następnie bez czekania na zakończenie procesów potomnych
+wywołujemy sleep(1)
+W pozostałych procesach po forkowaniu, wywołujemy sleep(10) // równie dobrze można sleep(1000000)
+sleep(1) z głównego procesu zakończy się po utworzeniu odpowiedniego drzewa i wtedy wypisujemy pid głównego procesu
+wywołujemy w głównym procesie sleep(5) - w tym czasie sprawdzarka bada czy utworzone zostało poprawne drzewo
+kończymy główny proces co powoduje zakończenie wszystkich utworzonych procesów.
 
 Przykład:
 Input:
 10
 Output:
+42640
+Oczekiwana struktura drzewa:
 prog(42640)─┬─prog(42641)─┬─prog(42643)─┬─prog(42647)
             │             │             └─prog(42648)
             │             └─prog(42645)───prog(42649)
-            ├─prog(42642)─┬─prog(42644)
-            │             └─prog(42646)
-            └─sh(42650)───pstree(42651)
+            └─prog(42642)─┬─prog(42644)
+                          └─prog(42646)
             
 Input:
 40
 Output:
+46057
+Oczekiwana struktura drzewa:
 prog(46057)─┬─prog(46058)─┬─prog(46060)─┬─prog(46063)─┬─prog(46080)─┬─prog(46089)
             │             │             │             │             └─prog(46093)
             │             │             │             └─prog(46082)─┬─prog(46095)
@@ -39,12 +42,11 @@ prog(46057)─┬─prog(46058)─┬─prog(46060)─┬─prog(46063)─┬─
             │                           │             └─prog(46077)
             │                           └─prog(46069)─┬─prog(46074)
             │                                         └─prog(46078)
-            ├─prog(46059)─┬─prog(46061)─┬─prog(46067)─┬─prog(46083)
-            │             │             │             └─prog(46086)
-            │             │             └─prog(46070)─┬─prog(46081)
-            │             │                           └─prog(46085)
-            │             └─prog(46064)─┬─prog(46068)─┬─prog(46084)
-            │                           │             └─prog(46087)
-            │                           └─prog(46071)─┬─prog(46076)
-            │                                         └─prog(46079)
-            └─sh(46097)───pstree(46098)
+            └─prog(46059)─┬─prog(46061)─┬─prog(46067)─┬─prog(46083)
+                          │             │             └─prog(46086)
+                          │             └─prog(46070)─┬─prog(46081)
+                          │                           └─prog(46085)
+                          └─prog(46064)─┬─prog(46068)─┬─prog(46084)
+                                        │             └─prog(46087)
+                                        └─prog(46071)─┬─prog(46076)
+                                                      └─prog(46079)
