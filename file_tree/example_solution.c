@@ -1,42 +1,41 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>
-#include <stdlib.h>
-#include <unistd.h>
 
 int main() {
-	int zes;
-	scanf("%d", &zes);
-	
 	char name[100];
-	
-	char* txt;
-	size_t bufsize = 2048;
-	txt = (char *)malloc(bufsize * sizeof(char));
-	
 	char folder_name[200];
 	char file_name[100];
-	
 	char symlink_name[200];
-	while(zes--) {
+	
+	char* txt;
+	size_t buf_size = 2048;
+	txt = (char *)malloc(buf_size * sizeof(char));
+
+	int num_sets;
+	scanf("%d", &num_sets);
+
+	while (num_sets--) {
 		scanf("%s", name);
 		char c;
 		scanf("%c", &c);
-		getline(&txt, &bufsize, stdin);
+		getline(&txt, &buf_size, stdin);
 		
 		folder_name[0] = 0;
 		strcat(folder_name, getenv("PWD"));
 		int p = strlen(folder_name), q = 0, b = 0;
 		folder_name[p++] = '/';
 		
-		for(int i=0;i<strlen(name);i++) {
+		for (int i = 0; i < strlen(name) ;i++) {
 			if(name[i] == '/') {
 				folder_name[p] = 0;
 				b = 1;
 			}
-			if(b == 0) folder_name[p++] = name[i];
+			if (b == 0) folder_name[p++] = name[i];
 			else file_name[q++] = name[i];
 		}
 		file_name[q] = 0;
@@ -58,4 +57,6 @@ int main() {
 		strcat(symlink_name, ".symlink");
 		symlink(folder_name, symlink_name);
 	}
+
+	free(txt)
 }

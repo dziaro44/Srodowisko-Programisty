@@ -1,2 +1,0 @@
-Zadanie jest głównie na tworzenie katalogów i plików, ale korzysta też ze zmiennej środowiskowej.
-Funkcje, na wykorzystaniu których ma się opierać wykonanie zadania, zostały wymienione w treści.

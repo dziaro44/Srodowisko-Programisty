@@ -26,13 +26,10 @@ function getcpid() {
 	
 	local first=$x
 	local second=$x
-	#echo 123
-	#return 0
 
 	if [[ $s -le $(($k/2)) ]]; then first=$(($first + $s)); else first=$(($first + $k/2)); second=$(($second + $s - $k/2)); fi;
 	if [[ $2 -eq 2 ]]; then echo $(getcpid $a 1); return 0; fi;
-	#echo $a $first $b $second
-	#return 0
+
 	local res1=$(getcpid $a $first)
 	local res2=$(getcpid $b $second)
 	if [[ $res1 -eq 1 && $res2 -eq 1 ]]; then echo 1; return 0; else echo 0; return 0; fi;
